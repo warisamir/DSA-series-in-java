@@ -62,3 +62,28 @@ public class Main {
     }
 
 }
+
+
+//2
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+         Scanner sc=new Scanner(System.in);
+         String s=sc.next();
+         printSS(0,s,"");
+    }
+
+    public static void printSS(int idx,String str, String ans) {
+        if(idx==str.length()){
+            System.out.println(ans);
+            return ;
+        }
+        char ch=str.charAt(idx);
+        printSS(idx+1,str,ans+ch);
+        printSS(idx+1,str,ans);
+    }
+
+}
