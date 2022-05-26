@@ -22,17 +22,11 @@ class Solution {
         return max;
     }
     private int traverse(TreeNode root){
-
-	        if (root == null) {
-	            return 0;
-	        }
-
-	        
-
-	        int leftChild = traverse(root.left);
-	        int rightChild = traverse(root.right);
-    int localMax = Math.max(Math.max(root.val, root.val + leftChild), Math.max(root.val + rightChild, root.val + leftChild + rightChild));
-       max = Math.max(max, localMax);
-        return Math.max(root.val, Math.max(root.val + rightChild, root.val + leftChild));
-	    }
+        if(root==null)return 0;
+        int leftc=traverse(root.left);
+        int rightc=traverse(root.right);
+        int locmax=Math.max(Math.max(root.val,root.val+leftc),Math.max(root.val+rightc,root.val+leftc+rightc));
+        max=Math.max(max,locmax);
+        return Math.max(root.val,Math.max(root.val+leftc,root.val+rightc));
+    }
 }
