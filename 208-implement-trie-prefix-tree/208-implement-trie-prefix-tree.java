@@ -1,22 +1,22 @@
-class TrieNode{
-        public TrieNode[] children = new TrieNode[26];
+class Node{
+        public Node[] children = new Node[26];
   public boolean isWord = false;
 }
 
 class Trie {
   public void insert(String word) {
-    TrieNode node = root;
+    Node node = root;
     for ( char c : word.toCharArray()) {
-      final int i = c - 'a';
+       int i = c - 'a';
       if (node.children[i] == null)
-        node.children[i] = new TrieNode();
+        node.children[i] = new Node();
       node = node.children[i];
     }
     node.isWord = true;
   }
 
   public boolean search(String word) {
-    TrieNode node = find(word);
+    Node node = find(word);
     return node != null && node.isWord;
   }
 
@@ -24,12 +24,12 @@ class Trie {
     return find(prefix) != null;
   }
 
-  private TrieNode root = new TrieNode();
+  private Node root = new Node();
 
-  private TrieNode find(String prefix) {
-    TrieNode node = root;
-    for (final char c : prefix.toCharArray()) {
-      final int i = c - 'a';
+  private Node find(String prefix) {
+    Node node = root;
+    for ( char c : prefix.toCharArray()) {
+      int i = c - 'a';
       if (node.children[i] == null)
         return null;
       node = node.children[i];
