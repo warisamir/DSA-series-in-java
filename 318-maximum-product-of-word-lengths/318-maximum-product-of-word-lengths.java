@@ -6,11 +6,10 @@ class Solution {
         int mx=0;
         for(int i=0;i<n;i++){
             for(int j=0;j<word[i].length();j++){
-                int id=word[i].charAt(j)-'a';
-                bm[i] |=(1<<id);
+                bm[i] |=1<<(word[i].charAt(j)-'a');
             }
             for(int j=0;j<i;j++){
-                if((bm[i] &bm[j])==0)
+                if((bm[i]&bm[j])==0)
                     mx=Math.max(mx,word[i].length()*word[j].length());
             }
         }
