@@ -13,33 +13,17 @@
  *     }
  * }
  */
-class Solution {
+class Solution { List<Integer>l=new ArrayList<>();
     public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer>l=new ArrayList<>();
-        TreeNode curr=root;
-        while(curr!=null){
-            if(curr.right==null){
-                l.add(curr.val);
-                curr=curr.left;
-            }
-            else{
-                TreeNode iop =curr.right;
-                while(iop.left!=null && iop.left!=curr){
-                   iop=iop.left;
-                }
-                if(iop.left==null)
-                {
-                    l.add(curr.val);
-                iop.left=curr;
-                 curr=curr.right;
-                }
-                else{
-                    iop.left=null;
-                    curr=curr.left;
-                }
-            }
+       
+        postorder(root);
+        return l;
+}
+    public void postorder(TreeNode root){
+        if(root!=null){
+            postorder(root.left);
+            postorder(root.right);
+            l.add(root.val);
         }
-        Collections.reverse(l);
-            return l;
     }
 }
