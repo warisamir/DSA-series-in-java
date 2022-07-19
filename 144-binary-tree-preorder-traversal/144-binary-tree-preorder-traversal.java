@@ -15,13 +15,30 @@
  */
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        return recursivesolution(root,new LinkedList<>());
-    }
-    public List<Integer> recursivesolution(TreeNode root,List <Integer>ans){
-        if(root ==null)return ans;
-        ans.add(root.val);
-        recursivesolution(root.left,ans);
-      recursivesolution (root.right,ans);  
-        return ans;
+   List<Integer>l =new ArrayList<>();
+        TreeNode curr=root;
+        while(curr!=null){
+            if(curr.left==null)
+            {
+                l.add(curr.val);
+                curr=curr.right;
+            }
+            else{
+                TreeNode iop=curr.left;
+                while(iop.right!=null && iop.right!=curr){
+                    iop=iop.right;
+                }
+                if(iop.right==null){
+                    l.add(curr.val);
+                    iop.right=curr;
+                    curr=curr.left;
+                }
+                else{
+                    iop.right=null;
+                    curr=curr.right;
+                }
+            }
+        }return l;
     }
 }
+        
