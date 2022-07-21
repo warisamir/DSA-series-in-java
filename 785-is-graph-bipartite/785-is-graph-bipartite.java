@@ -4,8 +4,8 @@ class Solution {
         for(int v=0;v<graph.length;v++){
             //if vertices not visited then pass them to isbip traversal via dfs 
             if(visited[v]==0){
-                boolean isbip=traverse(graph,visited,v);
-               // boolean isbip=traverse(graph,visited,v,1);
+                //boolean isbip=traverse(graph,visited,v);
+                boolean isbip=traverseDfS(graph,visited,v,1);
                 if(isbip==false)
                     return false;
             }
@@ -46,23 +46,24 @@ class Solution {
         }
         return true;
     }
-    // public boolean traverseDfS(int [][]graph,int []visited,int v,int color){
-    //    //make the color visited start with 1  
-    //     visited[v]=color;
-    //     for(int nbr:graph[v]){
-    //         if(visited[v]==0){
-    //             //if neighbour are unvisited then check for nbr color with reverse color color 
-    //           boolean isBip=  traverseDfS(graph,visited,nbr,color*-1);
-    //             if(isBip==false)return false;
-    //         }
-    //         else{
-    //             //if neighboru ar unvisited 
-    //            int oc=visited[nbr];
-    //             int nc=color*-1;//new colour is reverse of neighbour 
-    //             if(nc!=oc)
-    //                 return false;
-    //         }
-    //     }
-    //     return true;
-    // }
+    public boolean traverseDfS(int [][]graph,int []visited,int v,int color){
+       //make the color visited start with 1  
+        visited[v]=color;
+        for(int nbr:graph[v]){
+            if(visited[nbr]==0){
+                //if neighbour are unvisited then check for nbr color with reverse color color 
+              boolean isBip=  traverseDfS(graph,visited,nbr,color*-1);
+                if(isBip==false)return false;
+            }
+            else{
+                //if neighboru ar unvisited 
+               int oc=visited[nbr];
+                int nc=color*-1;//new colour is reverse of neighbour 
+                if(nc!=oc)
+                    return false;
+            }
+            
+        }
+        return true;
+    }
 }
