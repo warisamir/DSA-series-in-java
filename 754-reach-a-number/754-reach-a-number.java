@@ -4,7 +4,7 @@ class Solution {
         tar=Math.abs(tar);
         while(true){
             int rang=x*(x+1)/2;
-            if(tar<=rang && tar%2==rang%2)         
+            if(tar<=rang && ((rang-tar)&1)==0)      
             {  break;
             }
             x++;
