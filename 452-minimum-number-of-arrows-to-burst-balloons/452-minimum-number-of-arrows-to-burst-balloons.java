@@ -6,7 +6,7 @@ class Solution {
             else return -1;
         });
         int c=0;
-        int ans=Integer.MAX_VALUE;
+        int ans=pts[0][1];
       for(int []p:pts){
            if(p[0]>ans)
            {  c++;
