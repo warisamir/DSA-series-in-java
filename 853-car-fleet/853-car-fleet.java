@@ -1,23 +1,31 @@
 class Solution {
     public int carFleet(int target, int[] po,int sp[]) {
-       TreeMap<Integer,Integer>hm=new TreeMap<>(Collections.reverseOrder());
+PriorityQueue<Car> pq=new PriorityQueue<>();
         for(int i=0;i<po.length;i++){
-            hm.put(po[i],sp[i]);
-        }
-        
-        double t=0;
-        int c=0;
-        for(Map.Entry<Integer,Integer>hm2:hm.entrySet()){
-            int a=hm2.getKey();
-            int b=hm2.getValue();
-            int dist=target-a;
-            double time=dist*1.0/b;
-            if(time>t){
-                t=time;
-                c++;
+            Car c=new Car(po[i],sp[i]);
+        pq.add(c);
             }
+            int res=0;
+        double time=0;
+        while(pq.size()>0){
+            Car c=pq.remove(); 
+            double ct=(target-c.pos)*1.0/c.speed;
             
+            if(ct>time){
+                time=ct;
+                res++;
+            }
+        }return res;
         }
-        return c;
+      class Car implements Comparable <Car>{
+          int pos;
+          int speed;
+          Car(int   pos,int speed ){
+              this.pos=pos;
+              this.speed=speed;
+          }
+          public int compareTo(Car c){
+               return c.pos-this.pos;  
+          }
+      }
     }
-}
