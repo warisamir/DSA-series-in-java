@@ -1,14 +1,14 @@
 class Solution {
     public int carFleet(int target, int[] po,int sp[]) {
-PriorityQueue<Car> pq=new PriorityQueue<>();
-        for(int i=0;i<po.length;i++){
-            Car c=new Car(po[i],sp[i]);
-        pq.add(c);
-            }
-            int res=0;
+        Car car[]=new Car[po.length];
+           for(int i=0;i<po.length;i++){
+               car[i]=new Car(po[i],sp[i]);
+           }
+      Arrays.sort(car);
+        int res=0;
         double time=0;
-        while(pq.size()>0){
-            Car c=pq.remove(); 
+        for(int i=car.length-1;i>=0;i--){
+            Car c=car[i]; 
             double ct=(target-c.pos)*1.0/c.speed;
             
             if(ct>time){
@@ -24,8 +24,8 @@ PriorityQueue<Car> pq=new PriorityQueue<>();
               this.pos=pos;
               this.speed=speed;
           }
-          public int compareTo(Car c){
-               return c.pos-this.pos;  
-          }
+        public int compareTo(Car c){
+         return    this.pos-c.pos ;
+        }
       }
     }
