@@ -8,9 +8,11 @@ class Solution {
            if( nums[hi]>nums[mid])
                //growth is in right side,go to left 
                hi=mid;
-               else
+               else if(nums[hi]<nums[mid])
                    //growth is in left side,go to right
                    low=mid+1;
+           else
+               hi--;
        } 
         return nums[low];
     }
