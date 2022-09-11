@@ -1,21 +1,4 @@
-Skip to content
-Bitsy-Chuck
-/
-CP-template
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Security
-Insights
-CP-template/templates/template_cc.java /
-@Bitsy-Chuck
-Bitsy-Chuck added stuff
- History
- 1 contributor
-929 lines (846 sloc)  23.7 KB
+cp template//
 import java.io.Writer;
 import java.io.BufferedWriter;
 import java.io.OutputStreamWriter;
