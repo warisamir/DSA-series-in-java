@@ -10,7 +10,7 @@ class Solution {
             }
             else if(len==0)
             {
-                lps[i]=0;len=0;i++;
+                lps[i]=len;i++;
             }
             else
                 len=lps[len-1];
