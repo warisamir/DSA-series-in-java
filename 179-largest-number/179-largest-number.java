@@ -1,22 +1,22 @@
 class Solution {
     public String largestNumber(int[] nums) {
-        StringBuilder res=new StringBuilder();
-         Queue<Integer> pq = new PriorityQueue<>(
-            (a,b)->{
-                String A = String.valueOf(a);String B = String.valueOf(b);
-                String s1 = A + B;
-			    String s2 = B + A;
-			    return s2.compareTo(s1);
-
-                }
-        );
-            for(int i:nums) pq.offer(i);
-        
-        while(pq.size()!=0){
-            res.append(String.valueOf(pq.poll()));
+       String s="";
+        String sarr[]=new String[nums.length];
+        for(int i=0;i<nums.length;i++)
+        {
+            sarr[i]=nums[i]+"";
         }
-        
-        while(res.length()>1 && res.charAt(0)=='0') res.deleteCharAt(0);
-        return res.toString();
+        Arrays.sort(sarr,(a,b)->{
+            String s1=a+b;
+            String s2=b+a; 
+        return s2.compareTo(s1);
+            });
+        if(sarr[0].equals("0"))
+            return "0";
+        StringBuilder sb=new StringBuilder();
+        for(String st:sarr){
+            sb.append(st);
+        }
+        return sb.toString();
     }
 }
