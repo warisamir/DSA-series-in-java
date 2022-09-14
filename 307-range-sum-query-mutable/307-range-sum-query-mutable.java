@@ -1,27 +1,62 @@
 class NumArray {
-    int colgatetotal=0;
-List<Integer> l=new ArrayList<>();
-    public NumArray(int[] nums) {
-        for(int i:nums){
-        l.add(i);
-            colgatetotal+=i;
+class Node{
+    int st;
+    int end;
+    Node left;
+    Node right;
+    int val;
+} Node root;
+    Node construct(int []nums,int lo,int hi){
+        
+        if(lo==hi)
+        {
+            Node node=new Node();
+            node.st=node.end=lo;
+            node.right=node.left=null;
+            node.val=nums[lo];
+            return node;
         }
+            Node node=new Node();
+        node.st=lo;
+        node.end=hi;
+        int mid=(lo+hi)/2;
+        node.left=construct(nums,lo,mid);
+        node.right=construct(nums,mid+1,hi);
+        node.val+=node.left.val;
+        node.val+=node.right.val;
+        return node;
+    }
+    public NumArray(int[] nums) {
+        root=construct(nums,0,nums.length-1);
     }
     
-    public void update(int in, int val) {
-      colgatetotal=colgatetotal+(val)-l.get(in);
-        l.set(in,val);
+    void update(Node node,int idx,int val){
+        if(node.st==node.end)
+        { node.val=val;
+        return ;}
+        
+        int mid=(node.st+node.end)/2;
+            if(idx<=mid)
+            update(node.left,idx,val);
+        else
+            update(node.right,idx,val);
+        node.val=node.left.val+node.right.val;
+    }
+    public void update(int index, int val) {
+        update(root,index,val);
     }
     
     public int sumRange(int left, int right) {
-        int lsm=colgatetotal;
-        for(int i=0;i<left;i++){
-            lsm=lsm-l.get(i);
+        return query(root,left,right);
+    }
+    int query(Node node,int qs,int qe){
+        if(qe<node.st || qs>node.end)
+            return 0;
+        else if(qs<=node.st && qe>=node.end) 
+            return node.val;
+        else{
+           return query(node.left,qs,qe)+query(node.right,qs,qe);
         }
-        for(int i=right+1;i<l.size();i++){
-            lsm=lsm-l.get(i);
-        }
-        return lsm;
     }
 }
 
