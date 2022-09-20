@@ -1,62 +1,51 @@
 class NumArray {
-class Node{
-    int st;
-    int end;
-    Node left;
-    Node right;
-    int val;
-} Node root;
-    Node construct(int []nums,int lo,int hi){
-        
-        if(lo==hi)
-        {
-            Node node=new Node();
-            node.st=node.end=lo;
-            node.right=node.left=null;
-            node.val=nums[lo];
-            return node;
-        }
-            Node node=new Node();
-        node.st=lo;
-        node.end=hi;
-        int mid=(lo+hi)/2;
-        node.left=construct(nums,lo,mid);
-        node.right=construct(nums,mid+1,hi);
-        node.val+=node.left.val;
-        node.val+=node.right.val;
-        return node;
+class Fenwick{
+    int farr[];
+    Fenwick(int nums[]){
+        this.farr=new int[nums.length+1];
     }
+    public int sum(int pos){
+        int res=0;
+        while(pos>0){
+            res+=farr[pos];
+            pos-=rsb(pos);
+        }return res;
+    }
+    void update(int pos, int delta){
+        while(pos<farr.length){
+            farr[pos]+=delta;
+            pos=pos+rsb(pos);
+        }
+    }
+    private int rsb(int x){
+        return x &-x;
+    }
+}
+    Fenwick ft;
+    int[] oarr;
     public NumArray(int[] nums) {
-        root=construct(nums,0,nums.length-1);
+         ft=new Fenwick(nums);
+        oarr=nums;
+        for(int i=0;i<nums.length;i++){
+            int pos=i+1;
+            int val=nums[i];
+            ft.update(pos,val);
+        }
     }
     
-    void update(Node node,int idx,int val){
-        if(node.st==node.end)
-        { node.val=val;
-        return ;}
-        
-        int mid=(node.st+node.end)/2;
-            if(idx<=mid)
-            update(node.left,idx,val);
-        else
-            update(node.right,idx,val);
-        node.val=node.left.val+node.right.val;
-    }
     public void update(int index, int val) {
-        update(root,index,val);
+      int delta=val-oarr[index];
+        int pos=index+1;
+        ft.update(pos,delta);
+        oarr[index]=val;
     }
     
     public int sumRange(int left, int right) {
-        return query(root,left,right);
-    }
-    int query(Node node,int qs,int qe){
-        if(qe<node.st || qs>node.end)
-            return 0;
-        else if(qs<=node.st && qe>=node.end) 
-            return node.val;
-        else{
-           return query(node.left,qs,qe)+query(node.right,qs,qe);
-        }
+        int lpos=left+1;
+        int rpos=right+1;
+        int sumbleft=ft.sum(lpos-1);
+        int sumtright=ft.sum(rpos);
+        return sumtright-sumbleft;
     }
 }
 
