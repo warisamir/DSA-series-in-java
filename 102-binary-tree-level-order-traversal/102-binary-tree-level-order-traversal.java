@@ -17,21 +17,24 @@ class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List <List<Integer>> res=new ArrayList<>();
         if(root==null) return res;
-        Deque <TreeNode> mq=new ArrayDeque<>();
+       Queue<TreeNode>mq=new ArrayDeque<>();
+        Stack<TreeNode> st=new Stack<>();
         mq.add(root);
-        while(!mq.isEmpty()){
-            int count=mq.size();
-            List<Integer> row=new ArrayList<>();
-            for(int i=0;i<count;i++){
-                TreeNode curr=mq.poll();
-                row.add(curr.val);
-                if(curr.left!=null)
-                mq.add(curr.left);
-                if(curr.right!=null)
-                    mq.add(curr.right);
+        while(mq.size()>0){
+           int ct=mq.size();
+            List<Integer>re=new ArrayList<>();
+            for(int i=0;i<ct;i++){
+                TreeNode cur=mq.poll();
+                re.add(cur.val);
+                if(cur.left!=null)
+                    mq.add(cur.left);
+                if(cur.right!=null)
+                    mq.add(cur.right);
             }
-            res.add(row);
-        }  
+            res.add(re);
+        }
+     
+    
         return res; 
     }
 }
