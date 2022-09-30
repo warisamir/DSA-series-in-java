@@ -1,24 +1,35 @@
 class Solution {
     public boolean canPartition(int[] nums) {
-        int sum=0;
-        for(int i:nums){
-            sum+= i;
-        }
-        if(sum%2!=0) 
+        int s=0;
+        for(int i:nums)
+            s+=i;
+        if(s%2!=0)
             return false;
-        sum/=2;
-        Set<Integer>hs=new HashSet<>();
-        hs.add(0);
-        for(int n:nums){
-            Set<Integer>hm=new HashSet<>(hs);
-            for(Integer s:hm){
-                if(s+n==sum)
-                    return true;
-                else if(s+n<=sum)
-                    hs.add(s+n);
+       s=s/2;
+        boolean dp[][]=new boolean[nums.length+1][s+1];
+            for(int i=0;i<dp.length;i++){
+                for(int j=0;j<dp[0].length;j++){
+                    if(i==0 && j==0)
+                        dp[i][j]=true;
+                    else if(i==0)
+                        dp[i][j]=false;
+                    else if(j==0)
+                        dp[i][j]=true;
+                    else{
+                        if(dp[i-1][j]==true)
+                            dp[i][j]=true;
+                        else{
+                            int curr=nums[i-1];
+                            if(j>=curr){
+                                if(dp[i-1][j-curr]==true)
+                                    dp[i][j]=true;
+                                else
+                                    dp[i][j]=false;
+                            }
+                        }
+                    }
+                }
             }
-        }
-        return false;
+        return dp[nums.length][s];
     }
-   
 }
