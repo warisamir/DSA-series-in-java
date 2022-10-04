@@ -6,30 +6,21 @@ class Solution {
         if(s%2!=0)
             return false;
        s=s/2;
-        boolean dp[][]=new boolean[nums.length+1][s+1];
-            for(int i=0;i<dp.length;i++){
-                for(int j=0;j<dp[0].length;j++){
-                    if(i==0 && j==0)
-                        dp[i][j]=true;
-                    else if(i==0)
-                        dp[i][j]=false;
-                    else if(j==0)
-                        dp[i][j]=true;
-                    else{
-                        if(dp[i-1][j]==true)
-                            dp[i][j]=true;
-                        else{
-                            int curr=nums[i-1];
-                            if(j>=curr){
-                                if(dp[i-1][j-curr]==true)
-                                    dp[i][j]=true;
-                                else
-                                    dp[i][j]=false;
-                            }
-                        }
-                    }
+        
+        boolean dp[]=new boolean[s+1];
+        dp[0]=true;
+            for(int i=0;i<nums.length;i++){
+                boolean ndp[]=new boolean[s+1];
+                ndp[0]=true;
+                for(int j=1;j<s+1;j++){
+                  if(j>=nums[i] && dp[j-nums[i]])
+                    ndp[j]=true;
+                    else
+                        ndp[j]=dp[j];
                 }
+               if(ndp[s])return true;
+                dp=ndp;
             }
-        return dp[nums.length][s];
+        return false;
     }
 }
