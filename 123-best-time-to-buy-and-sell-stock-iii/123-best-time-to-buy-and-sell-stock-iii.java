@@ -1,5 +1,6 @@
 class Solution {
     public int maxProfit(int[] prices) {
+        //we make a dp for starting so that we the max profit before that postion  
        int dp[]=new int[prices.length];
         //dpstarting  = profit if sold today or before today
         dp[0]=0;
