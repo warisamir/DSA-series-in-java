@@ -40,13 +40,8 @@ class Solution
     public static int findSum(int A[],int N) 
     {
         //code here
-        int min=Integer.MAX_VALUE,max=Integer.MIN_VALUE;
-        for(int i:A){
-           if(i<min)
-           min=i;
-           if(i>max)
-           max=i;
-        }
-        return max+min;
+        
+        Arrays.sort(A);
+        return A[0]+A[A.length-1];
     }
 }
