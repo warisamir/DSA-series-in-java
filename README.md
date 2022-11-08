@@ -1,2 +1,2 @@
 # DSA-series-in-java
-[![@warisamir1's Holopin board](https://holopin.me/warisamir1)](https://holopin.io/@warisamir1)
+[![@warisamir1's Holopin board](https://holopin.me/warisamir)](https://holopin.io/@warisamir)
