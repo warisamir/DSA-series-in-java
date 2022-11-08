@@ -1,9 +1,16 @@
 class Solution {
     public String makeGood(String s) {
-        for(int i=0;i<s.length()-1;i++){
-        if(Math.abs(s.charAt(i)-s.charAt(i+1))==32)
-            return makeGood(s.substring(0,i)+s.substring(i+2));
+        Stack<Character>st=new Stack<>();
+        for(char ch:s.toCharArray()){
+            if(!st.isEmpty() && Math.abs(st.peek()-ch)==32)
+                st.pop();
+            else
+                st.push(ch);
         }
-        return s;
+       char []ch=new char[st.size()];
+        for(int i=ch.length-1;i>=0;i--){
+            ch[i]=st.pop();
+        }
+        return new String(ch);
     }
 }
