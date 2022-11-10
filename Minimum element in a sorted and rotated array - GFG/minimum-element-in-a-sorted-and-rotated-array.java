@@ -37,7 +37,14 @@ class Solution
     {
         //complete the function here
         int min=Integer.MAX_VALUE;
-        Arrays.sort(arr);
-        return arr[0];
+       int lo=0,hi=n-1;
+       while(lo<hi){
+          int  mid=lo+(hi-lo)/2;
+           if(arr[hi]<arr[mid])
+           lo=mid+1;
+           else 
+           hi=mid;
+       }
+       return arr[lo];
     }
 }
