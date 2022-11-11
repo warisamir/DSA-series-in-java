@@ -1,15 +1,20 @@
-// { Driver Code Starts
+//{ Driver Code Starts
+
+
 import java.util.*;
+import java.io.*;
 class PeakElement{
-	public static void main(String[] args){
-		Scanner sc=new Scanner(System.in);
-		int t=sc.nextInt();
+	public static void main(String[] args)throws IOException{
+        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter out=new PrintWriter(System.out);
+		int t=Integer.parseInt(in.readLine().trim());
 		while(t-->0){
-			int n=sc.nextInt();
+			int n=Integer.parseInt(in.readLine().trim());
 			int[] a=new int[n];
 		    int[] tmp=new int[n];
+		    String s[]=in.readLine().trim().split(" ");
 			for(int i=0;i<n;i++){
-				a[i]=sc.nextInt();
+				a[i]=Integer.parseInt(s[i]);
 				tmp[i] = a[i];
 			}
 		    
@@ -17,7 +22,7 @@ class PeakElement{
 			int A=(new Solution()).peakElement(tmp,n);
 			
 			if(A<0 && A>=n)
-			    System.out.println(0);
+			    out.println(0);
 			else
 			{
     			if(n==1 && A==0)
@@ -30,11 +35,13 @@ class PeakElement{
     			    f=1;
     			else
     			    f=0;
-			    System.out.println(f);
+			    out.println(f);
 			}
 		}
+		out.close();
 	}
-}// } Driver Code Ends
+}
+// } Driver Code Ends
 
 
 /*Complete the function below*/
@@ -47,23 +54,18 @@ class Solution
 	public int peakElement(int[] arr,int n)
     {
        //add code here.
-   if(arr.length==1||arr[0]>arr[1]){
-          return 0;
-      }
-      if(arr[n-1]>arr[n-2])
-       return n-1;
-      for(int i=1;i<n-1;){
-          if(arr[i]>arr[i+1]){
-              if(arr[i-1]<arr[i])
-                  return i;
-              else
-                  i+=2;
-           }
-          else
-              i++;
+       if(n==0) return 0;
+       int hi=n-1;
+       int lo=0;
+       while(lo<hi){  
+           int mid=(lo+hi)/2;
+              if(arr[mid]>arr[mid+1])
+              hi=mid;
+           else 
+           lo=mid+=1;
           
-      }
-      return -1;
-   
-}
+       }
+       return lo;
+    }
+    
 }
