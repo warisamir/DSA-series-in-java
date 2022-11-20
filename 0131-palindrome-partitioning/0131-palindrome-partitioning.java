@@ -16,10 +16,10 @@ class Solution {
     }
     public List<List<String>> partition(String s) {
         IsPalindrone(s);
-        // List<List<String>>[] dp=new List[s.length()];
-        return helper(s,s.length()-1);
+        List<List<String>>[] sp=new List[s.length()];
+        return helper(s,s.length()-1,sp);
     }
-    public List<List<String>> helper(String s,int j){
+    public List<List<String>> helper(String s,int j,List []sp){
         if(j<0)
         {
              List<List<String>>ls=new ArrayList<>();
@@ -27,20 +27,22 @@ class Solution {
         ls.add(bls);
             return ls ;
         }
-        // if(dp[j]!=null)return (List<List<String>>)dp[j];
+        if(sp[j]!=null)
+            return (List<List<String>>)sp[j];
+        
        List<List<String>>mres=new ArrayList<>();
         for(int i=j;i>=0;i--){
             if(dp[i][j]==true){
                 String palin=s.substring(i,j+1);
-                List<List<String>> res=helper(s,i-1);
+                List<List<String>> res=helper(s,i-1,sp);
                 for(List<String> lis:res){
-                    // ArrayList<String>mlis=new ArrayList<>(lis);
-                    lis.add(palin);
-                    mres.add(lis);
+                     ArrayList<String>mlis=new ArrayList<>(lis);
+                    mlis.add(palin);
+                    mres.add(mlis);
                 }
             }
         }
-        // dp[j]=mres;
+         sp[j]=mres;
         return mres;
     }
 }
