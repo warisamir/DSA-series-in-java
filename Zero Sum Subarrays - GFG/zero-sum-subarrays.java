@@ -38,17 +38,18 @@ class Solution{
     //Function to count subarrays with sum equal to 0.
     public static long findSubarray(long[] arr ,int n) 
     {
-        //Your code here
+       
+        
         HashMap<Long,Long>hm=new HashMap<>();
-        long sum=0;
-        hm.put(sum,1L);
-        long ans=0;
-        for(long val:arr){
-            sum+=val;
+        hm.put(0L,1L);
+        long sum=0,  res=0;
+        for(int i = 0; i<n; i++){
+            sum+=arr[i];
             if(hm.containsKey(sum))
-            ans+=hm.get(sum);
+                res+=hm.get(sum);
+                
             hm.put(sum,hm.getOrDefault(sum,0L)+1L);
         }
-        return ans;
+        return res;
     }
 }
