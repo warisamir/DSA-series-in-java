@@ -11,24 +11,29 @@ class Graph{
         adj[src].add(dest);
         adj[dest].add(src);
     }
-    }
-class Solution {
-    public boolean dfs(int sr,int des,Graph g,boolean vis[]){
+    public boolean dfs(int sr,int des,boolean vis[]){
         if(sr==des)return true;
         if(vis[sr]==true)
             return false;
         vis[sr]=true;
-     for(int nbr:g.adj[sr]){
-         if(dfs(nbr,des,g,vis)==true)return true;
+     for(int nbr:adj[sr]){
+         if(dfs(nbr,des,vis)==true)return true;
      }   
         return false;
     }
+    public boolean dfs(int src,int dest){
+        boolean vis[]=new boolean[adj.length];
+        return dfs(src,dest,vis);
+    }
+    }
+class Solution {
+    
     public boolean validPath(int n, int[][] edges, int source, int destination) {
         Graph g=new Graph(n);
         for(int i=0;i<edges.length;i++){
             g.addEdge(edges[i][0],edges[i][1]);
         }
-        boolean vis[]=new boolean[n];
-        return dfs(source,destination,g,vis);
+        
+        return g.dfs(source,destination);
     }
 }
