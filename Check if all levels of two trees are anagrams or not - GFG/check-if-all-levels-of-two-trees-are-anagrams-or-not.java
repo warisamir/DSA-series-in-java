@@ -138,33 +138,30 @@ class Node
 class Solution {
     public static boolean areAnagrams(Node node1, Node node2) {
         // code here
-        ArrayDeque<Node>q1=new ArrayDeque<>();
-        ArrayDeque<Node>q2=new ArrayDeque<>();
-        q1.add(node1);
-        q2.add(node2);
-        while(q1.size()>0 && q2.size()>0){
-            int s1=q1.size();
-            int s2=q2.size();
-            if(s1!=s2)
-            return false;
-            
-            Map<Integer,Integer>hm=new HashMap<>();
-            for(int i=0;i<s1;i++){
-                Node n1=q1.pop();
-                Node n2=q2.pop();
-              hm.put(n1.data,hm.getOrDefault(n1.data,0)+1);
-              hm.put(n2.data,hm.getOrDefault(n2.data,0)-1); 
-             if(n1.left!=null)q1.add(n1.left);
-              if(n2.left!=null)q2.add(n2.left);
-               if(n1.right!=null)q1.add(n1.right);
-                if(n2.right!=null)q2.add(n2.right);
-            }
-            for(int k:hm.keySet()){
-                if(hm.get(k)!=0)
-                return false;
-            }
-        }
-        return true;
+        Queue<Node>q1= new LinkedList<>();
+         Queue<Node>q2= new LinkedList<>();
+         q1.add(node1);q2.add(node2);
+         while(!q1.isEmpty() && !q2.isEmpty()){
+             int s1=q1.size();
+             int s2=q2.size();
+             if(s1!=s2)return false;
+             
+             Map<Integer,Integer>hm=new HashMap<>();
+             for(int i=0;i<s1;i++){
+                 Node a=q1.remove();
+             Node b=q2.remove();
+                 hm.put(a.data,hm.getOrDefault(a.data,0)+1);
+                 hm.put(b.data,hm.getOrDefault(b.data,0)-1);
+                 if(a.left!=null) q1.add(a.left);
+                 if(b.left!=null) q2.add(b.left);
+                  if(a.right!=null) q1.add(a.right);
+                  if(b.right!=null) q2.add(b.right);
+             }
+             for(int k:hm.keySet()){
+                 if(hm.get(k)>0)return false;
+             }
+         }
+         return true;
     }
 }
         
