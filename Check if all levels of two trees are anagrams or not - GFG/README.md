@@ -1,6 +1,7 @@
 # Check if all levels of two trees are anagrams or not
 ## Hard
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given two binary trees, the task is&nbsp;to check if each of their levels are anagrams of each other or not.&nbsp;</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given two binary trees with same number of nodes, the task is&nbsp;to check if each of their levels are anagrams of each other or not.&nbsp;<br>
+<strong>Note:&nbsp;</strong>All nodes of a tree should be unique.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
