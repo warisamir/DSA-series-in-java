@@ -1,30 +1,30 @@
-class Solution {
-   public int ct=0;
-    public int numEnclaves(int[][] grid) {
-        int ans=0;
-         for(int i=0;i<grid.length;i++){
-            for(int j=0;j<grid[0].length;j++){
-                if(grid[i][j]==1)
-                { ct=0;
-                 if(dfs(i,j,grid))
-                ans+=ct;
-            }
-            }
-         }
-        return ans;
+class Solution{  
+public void dfs(int a[][], int i, int j) {
+        if(i >= 0 && i <= a.length - 1 && j >= 0 && j <= a[i].length - 1 && a[i][j] == 1) {
+            a[i][j] = 0;
+            dfs(a, i + 1, j);
+            dfs(a, i - 1, j);
+            dfs(a, i, j + 1);
+            dfs(a, i, j - 1);
+        }
     }
+    
+    public int numEnclaves(int[][] A) {
+         
+        int result = 0;
+        for(int i = 0; i < A.length; i++) {
+            for(int j = 0; j < A[i].length; j++) {
+                if(i == 0 || j == 0 || i == A.length - 1 || j == A[i].length - 1)
+                    dfs(A, i, j);
+            }
+        }
         
-          public boolean dfs(int r,int c,int [][]grid){
-        if(r<0 || c<0|| r>=grid.length || c>=grid[0].length)
-            return false;
-               if(grid[r][c]==0)
-                   return true;
-              grid[r][c]=0;
-              ct++;
-      boolean A = dfs(r, c+1, grid);
-        boolean B = dfs(r, c-1, grid);
-        boolean C = dfs(r+1, c, grid);
-        boolean D = dfs(r-1, c, grid);
-        
-        return A && B && C && D;  }
+        for(int i = 0; i < A.length; i++) {
+            for(int j = 0; j < A[i].length; j++) {
+                if(A[i][j] == 1)
+                    result++;
+            }
+        }
+        return result;
+    }
 }
