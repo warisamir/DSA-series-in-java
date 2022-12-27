@@ -5,12 +5,12 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             hm.put(nums[i],true);
         }
-        for(int k:nums){
+        for(int k:hm.keySet()){
             if(hm.containsKey(k-1))
                 hm.put(k,false);
         }
         int max=0;
-        for(int i:nums){
+        for(int i:hm.keySet()){
             if(hm.get(i)==true)
             {
                 int j=1;
