@@ -1,29 +1,37 @@
+class Pair{
+    int avt=0;
+    int burst=0;
+    int id=0;
+    Pair(int avt,int burst,int id){
+        this.avt=avt;
+        this.burst=burst;
+        this.id=id;
+    }
+}
 class Solution {
     public int[] getOrder(int[][] task) {
-       int neworder[][] =new int[task.length][3];
+    List<Pair>ll=new ArrayList<>();
         for(int i=0;i<task.length;i++){
-            neworder[i][0]=task[i][0];
-             neworder[i][1]=task[i][1];
-             neworder[i][2]=i;
+            ll.add(new Pair(task[i][0],task[i][1],i));
         }
-        Arrays.sort(neworder,Comparator.comparingInt(a->a[0]));
-        PriorityQueue<int []>pq=new PriorityQueue<>((a,b)->(a[0]!=b[0])?(a[0]-b[0]): (a[1] - b[1]));
-        int[] ans = new int[task.length];
-        int ansIndex = 0, currTime = 0;
-        for (int i = 0; i < neworder.length; i++) {
-            while (currTime < neworder[i][0] && !pq.isEmpty()) {
-                int[] topTask = pq.remove();
-                ans[ansIndex++] = topTask[1];
-                currTime += topTask[0];
+        Collections.sort(ll,(a,b)->(a.avt==b.avt)?a.burst-b.burst:a.avt-b.avt);
+        int time=0;
+        PriorityQueue<Pair>pq=new PriorityQueue<>((a,b)->(a.burst==b.burst)?a.id-b.id:a.burst-b.burst);
+        int ans[]=new int[ll.size()];
+        int ind=0;
+        int idx=0;
+        while(idx<ll.size()){
+            while(ind<ll.size() && ll.get(ind).avt<=time){
+                pq.add(ll.get(ind));
+                ind++;
             }
-            currTime = Math.max(currTime, neworder[i][0]);
-            pq.add(new int[]{neworder[i][1], neworder[i][2]});
-        }
-        while (!pq.isEmpty()) {
-            int[] topTask = pq.remove();
-            ans[ansIndex++] = topTask[1];
-        }
-
-        return ans;
+            if(pq.isEmpty()){
+                time=ll.get(ind).avt;
+                continue;
+            }
+            Pair p=pq.poll();
+            ans[idx++]=p.id;
+            time+=p.burst;
+        }return ans;
     }
 }
