@@ -34,12 +34,16 @@ import java.util.*;
 
 class Solution {
     int findMidSum(int[] ar1, int[] ar2, int n) {
-        int arr[]=new int[ar1.length+ar2.length];
-        for(int i=0;i<n;i++)
-        arr[i]=ar1[i];
-          for(int i=0;i<n;i++)
-        arr[n+i]=ar2[i];
-        Arrays.sort(arr);
-        return arr[(2*n)/2]+arr[2*(n-1)/2];
+        int i=n-1,j=0,temp=0;
+        while(i>0 && j<n){
+            if(ar1[i]>ar2[j])
+         {temp=ar1[i];
+            ar1[i]=ar2[j];
+            ar2[j]=temp;
+          }  i--;j++;
+        }
+        Arrays.sort(ar1);
+        Arrays.sort(ar2);
+        return ar1[n-1]+ar2[0];
     }
 }
