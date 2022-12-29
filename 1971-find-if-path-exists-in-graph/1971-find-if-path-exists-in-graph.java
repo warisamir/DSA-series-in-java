@@ -25,6 +25,22 @@ class Graph{
         boolean vis[]=new boolean[adj.length];
         return dfs(src,dest,vis);
     }
+    public boolean BFS(int src,int dest){
+        Queue<Integer>q=new ArrayDeque<>();
+        boolean []vis=new boolean[adj.length];
+        q.add(src);
+        while(q.size()>0){
+            int front= q.remove();
+            if(vis[front]==true)continue;
+            if(front==dest)return true;
+            vis[front]=true;
+            for(Integer nbr:adj[front]){
+                if(vis[nbr]==false)
+                    q.add(nbr);
+            }
+        }return false;
+    }
+    
     }
 class Solution {
     
@@ -34,6 +50,6 @@ class Solution {
             g.addEdge(edges[i][0],edges[i][1]);
         }
         
-        return g.dfs(source,destination);
+        return g.BFS(source,destination);
     }
 }
