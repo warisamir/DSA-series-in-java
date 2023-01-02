@@ -46,13 +46,7 @@ class Solution
             topo[idx--]=src;
         
     }
-    void dfs2(int src,ArrayList<ArrayList<Integer>>adj,boolean vis[]){
-         if(vis[src]==true) return ;
-        vis[src]=true;
-        for(Integer nbr:adj.get(src))
-            dfs2(nbr,adj,vis);
-
-    }
+   
     public int findMotherVertex(int V, ArrayList<ArrayList<Integer>>adj)
     {
         boolean vis[]=new boolean[V];
@@ -61,8 +55,9 @@ class Solution
         for(int i=0;i<V;i++){
         dfs(0,adj,vis);
         }
+        idx=V-1;
         Arrays.fill(vis,false);
-        dfs2(topo[0],adj,vis);
+        dfs(topo[0],adj,vis);
         for(int i=0;i<V;i++){
             if(vis[i]==false)
             return -1;
