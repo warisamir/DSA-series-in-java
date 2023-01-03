@@ -34,20 +34,59 @@ class GFG {
 
 class Solution {
     // Function to detect cycle in an undirected graph.
-    public boolean dfs(int src,int p,ArrayList<ArrayList<Integer>>adj,boolean []vis){
-        if(vis[src]==true)return true;
+    static class Pair{
+    int src;int par;
+    Pair(int src,int par){
+        this.src=src;
+        this.par=par;
+    }
+}
+    public boolean dfs(int src,int p,ArrayList<ArrayList<Integer>>adj,boolean []vis,int par[]){
+        par[src]=p;
+        if(vis[src]==true){
+            int ptr=src;
+            do{
+                System.out.print(ptr);
+                ptr=par[ptr];
+            }while(ptr!=src);
+            System.out.println(src);
+            return true;
+        }
         vis[src]=true;
         for(Integer nbr:adj.get(src)){
-            if(nbr!=p && dfs(nbr,src,adj,vis)==true)
+            if(nbr!=p && dfs(nbr,src,adj,vis,par)==true)
             return true;
         }return false;
+    }
+     public boolean bfs(int src,ArrayList<ArrayList<Integer>>adj,boolean [] vis){
+        Queue<Pair>q=new LinkedList<>();
+        q.add(new Pair(src,-1));
+        
+        while(q.size()>0){
+            Pair front=q.remove();
+            src=front.src;
+        int par=front.par;
+        if(vis[src]==true) 
+        return true;
+        vis[src]=true;
+        for(Integer nbr:adj.get(src)){
+            if(nbr!=par)
+            q.add(new Pair(nbr,src));
+        }
+        }
+        return false;
+        
+        
     }
     public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adj) {
         // Code here
         boolean vis[]=new boolean[V];
+        // int par[]=new int[V];
+        // Arrays.fill(par,-1);
+        //multisource dfs
         for(int i=0;i<V;i++)
         {
-            if(vis[i]==false && dfs(i,-1,adj,vis)==true)
+            if(vis[i]==false && bfs(i,adj,vis)==true)
             return true;
         }return false;
     }
