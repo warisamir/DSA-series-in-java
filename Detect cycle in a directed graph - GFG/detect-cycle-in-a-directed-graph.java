@@ -45,14 +45,32 @@ class Solution {
         vis[src]=1;
         return false;
     }
+    public boolean bfs(int n,ArrayList<ArrayList<Integer>>adj){
+        int incom[]=new int[n];
+        for(int src=0;src<adj.size();src++){
+           for(Integer nbr:adj.get(src))
+           incom[nbr]++;
+        }
+        Queue<Integer>q=new LinkedList<>();
+        for(int i=0;i<n;i++){
+            if(incom[i]==0)
+            q.add(i);
+        }
+        int vis=0;
+        while(q.size()>0){
+            int src=q.remove();
+            vis++;
+            for(Integer nbr:adj.get(src)){
+                incom[nbr]--;
+                if(incom[nbr]==0)
+                q.add(nbr);
+            }
+        }
+        if(vis==n)return false;return true;
+    }
+    
     public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
         // code here
-        int vis[]=new int[V];
-        Arrays.fill(vis,-1);
-        for(int i=0;i<V;i++){
-            if(dfs(i,adj,vis)==true)
-            return true;
-        }
-        return false;
+      return bfs(V,adj);
     }
 }
