@@ -2,8 +2,8 @@ class Solution {
     boolean dp[][];
   void IsPalindrone(String s){
         dp=new boolean[s.length()][s.length()];
-        for(int g=0;g<dp[0].length;g++){
-            for(int j=g,i=0;j<dp[0].length;j++,i++){
+        for(int g=0;g<dp[0].length;g++){   
+            for(int j=g,i=0;j<dp[0].length;j++,i++){ 
                 if(g==0)
                     dp[i][j]=true;
                 else if(g==1)
