@@ -24,7 +24,7 @@ class Solution {
         public int find(int a){
             if(parent[a]==-1)
                 return a;
-            return find(parent[a]);
+            return parent[a]=find(parent[a]);
         }
     }
     public boolean issimilar(String a,String b){
