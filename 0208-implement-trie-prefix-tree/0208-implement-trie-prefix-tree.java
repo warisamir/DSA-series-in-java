@@ -1,5 +1,6 @@
 class Trie {
- class Node{ boolean eow=false;
+ class Node{ 
+     boolean eow=false;
     Node []children=new Node[26];}
     Node root;
     public Trie() {
@@ -11,8 +12,7 @@ class Trie {
         for(char ch:word.toCharArray()){
             if(temp.children[ch-'a']==null)
                 temp.children[ch-'a']=new Node();
-        
-    temp=temp.children[ch-'a'];
+           temp=temp.children[ch-'a'];
         }
         temp.eow=true;
     }
@@ -22,8 +22,7 @@ class Trie {
         for(char ch:word.toCharArray()){
             if(temp.children[ch-'a']==null)
                return false;
-        
-    temp=temp.children[ch-'a'];
+            temp=temp.children[ch-'a'];
         }
         return temp.eow;
     }
