@@ -2,43 +2,34 @@ class Solution {
     public List<Integer> findNumOfValidWords(String[] words, String[] puzzles) {
      List<Integer>l=new ArrayList<>();
         HashMap<Integer,Integer>hm=new HashMap<>();
-        for(int i=0;i<words.length;i++){
-            int wmsk=createmsk(words[i]);
-            if(hm.containsKey(wmsk)){
-           int oldfreq = hm.get(wmsk);
-    			int newfreq = oldfreq+1;
-    			hm.put(wmsk,newfreq);
-        }
-            else
-    		{
-    			hm.put(wmsk,1);
-    		}
-    	}
-        for(String i:puzzles){
-            int pmsk=createmsk(i);
-            char fch=i.charAt(0);
-            int f=1<<(fch-'a');
-            int sb=pmsk;
-            int c=0;
-            while(sb!=0){
-                boolean ischpre=((sb&f)==f)?true:false;
-                boolean valid=hm.containsKey(sb);
-                if(ischpre==true && valid==true)
-                    c+=hm.get(sb);
-                sb=(sb-1) & pmsk;
+       
+        for(String wd:words){
+            int mask=0;
+            for(int i=0;i<wd.length();i++){
+              mask|=(1<<wd.charAt(i)-'a');
             }
-            l.add(c);
+            hm.put(mask,hm.getOrDefault(mask,0)+1);
+            }
+        ArrayList<Integer>res=new ArrayList<>();
+        for(String puzz:puzzles){
+            int pmsk=0;
+          for(int i=0;i<puzz.length();i++){
+              int bit=puzz.charAt(i)-'a';
+              pmsk=pmsk|((1<<bit));
+          }
+           int psub=pmsk;
+            int ct=0;
+           int firs=1<<(puzz.charAt(0)-'a');
+            while(true){
+                if((psub &firs)==firs && hm.containsKey(psub)){
+                    ct+=hm.get(psub);
+                }
+                if(psub==0)break;
+                    psub=(psub-1) &pmsk;
+            }
+            l.add(ct);
         }
         return l;
     }
-private int createmsk(String st){
-    int msk=0;
-    for(int i=0;i<st.length();i++){
-        int b=st.charAt(i)-'a';
-        msk=msk|(1<<b);
-    }
-    return msk;
-}  
-        
     
 }
