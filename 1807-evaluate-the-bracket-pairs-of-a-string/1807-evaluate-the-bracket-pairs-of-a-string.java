@@ -1,21 +1,22 @@
-/**
- * @param {string} s
- * @param {string[][]} knowledge
- * @return {string}
- */
-var evaluate = function(s, kn) {
-    let obj={};
-    for(var i=0;i<kn.length;i++){
-        obj[kn[i][0]]=kn[i][1]
-    }
-    const keyArray=Object.keys(obj);
-    keyArray.forEach(keys=>{
-        let regex=new RegExp(`\\(${keys}\\)`,"g");
-        s=s.replace(regex,obj[keys])
-    })
-    if(s.indexOf('(')<0)
-        {
-            return s;
+class Solution {
+    public String evaluate(String s, List<List<String>> ar) {
+        Map<String,String>hm=new HashMap<>();
+        List<String>ls=new ArrayList<>();
+        for(List<String>l:ar){
+            hm.put(l.get(0),l.get(1));
         }
-    return s.replace(/\(.*?\)/g,"?");
-};
+      StringBuilder sb=new StringBuilder(),res=new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='('){
+                while(s.charAt(++i)!=')')
+                    sb.append(s.charAt(i));
+            String s1=hm.get(sb.toString());
+            res.append(s1==null?"?":s1);
+          sb.setLength(0);
+            continue;
+        }
+            if (s.charAt(i) != ')') res.append(s.charAt(i));
+        }
+        return res.toString();
+    }
+}
