@@ -4,7 +4,7 @@ class Solution {
       for(int a:nums){
           if((a&1)==1){
            ct++;
-           if(tem<ct)tem=ct;  
+           tem=(tem<ct)?ct:tem;  
           }
           else
               ct=0;
