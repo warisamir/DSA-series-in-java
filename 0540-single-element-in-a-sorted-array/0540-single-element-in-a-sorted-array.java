@@ -1,9 +1,9 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
-        int xor=0;
+        int x=0;
         for(int n:nums){
-            xor=(xor^n);
+            x^=n;
         }
-        return xor;
+        return x;
     }
 }
