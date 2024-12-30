@@ -41,4 +41,8 @@
 |  |
 | ------- |
 | [2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level](https://github.com/warisamir/DSA-series-in-java/tree/master/2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level) |
+## Dynamic Programming
+|  |
+| ------- |
+| [2562-count-ways-to-build-good-strings](https://github.com/warisamir/DSA-series-in-java/tree/master/2562-count-ways-to-build-good-strings) |
 <!---LeetCode Topics End-->
