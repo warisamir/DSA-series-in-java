@@ -29,4 +29,16 @@
 |  |
 | ------- |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
+## Tree
+|  |
+| ------- |
+| [2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level](https://github.com/warisamir/DSA-series-in-java/tree/master/2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level) |
+## Breadth-First Search
+|  |
+| ------- |
+| [2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level](https://github.com/warisamir/DSA-series-in-java/tree/master/2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level) |
+## Binary Tree
+|  |
+| ------- |
+| [2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level](https://github.com/warisamir/DSA-series-in-java/tree/master/2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level) |
 <!---LeetCode Topics End-->
