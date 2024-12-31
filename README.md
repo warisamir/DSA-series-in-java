@@ -6,6 +6,7 @@
 ## Array
 |  |
 | ------- |
+| [1025-minimum-cost-for-tickets](https://github.com/warisamir/DSA-series-in-java/tree/master/1025-minimum-cost-for-tickets) |
 | [1272-invalid-transactions](https://github.com/warisamir/DSA-series-in-java/tree/master/1272-invalid-transactions) |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
 ## Hash Table
@@ -44,5 +45,6 @@
 ## Dynamic Programming
 |  |
 | ------- |
+| [1025-minimum-cost-for-tickets](https://github.com/warisamir/DSA-series-in-java/tree/master/1025-minimum-cost-for-tickets) |
 | [2562-count-ways-to-build-good-strings](https://github.com/warisamir/DSA-series-in-java/tree/master/2562-count-ways-to-build-good-strings) |
 <!---LeetCode Topics End-->
