@@ -11,6 +11,7 @@
 | [1428-jump-game-iii](https://github.com/warisamir/DSA-series-in-java/tree/master/1428-jump-game-iii) |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/warisamir/DSA-series-in-java/tree/master/2691-count-vowel-strings-in-ranges) |
+| [2855-maximum-number-of-jumps-to-reach-the-last-index](https://github.com/warisamir/DSA-series-in-java/tree/master/2855-maximum-number-of-jumps-to-reach-the-last-index) |
 ## Hash Table
 |  |
 | ------- |
@@ -52,6 +53,7 @@
 | ------- |
 | [1025-minimum-cost-for-tickets](https://github.com/warisamir/DSA-series-in-java/tree/master/1025-minimum-cost-for-tickets) |
 | [2562-count-ways-to-build-good-strings](https://github.com/warisamir/DSA-series-in-java/tree/master/2562-count-ways-to-build-good-strings) |
+| [2855-maximum-number-of-jumps-to-reach-the-last-index](https://github.com/warisamir/DSA-series-in-java/tree/master/2855-maximum-number-of-jumps-to-reach-the-last-index) |
 ## Prefix Sum
 |  |
 | ------- |
