@@ -63,4 +63,12 @@
 |  |
 | ------- |
 | [1428-jump-game-iii](https://github.com/warisamir/DSA-series-in-java/tree/master/1428-jump-game-iii) |
+## Linked List
+|  |
+| ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/warisamir/DSA-series-in-java/tree/master/0019-remove-nth-node-from-end-of-list) |
+## Two Pointers
+|  |
+| ------- |
+| [0019-remove-nth-node-from-end-of-list](https://github.com/warisamir/DSA-series-in-java/tree/master/0019-remove-nth-node-from-end-of-list) |
 <!---LeetCode Topics End-->
