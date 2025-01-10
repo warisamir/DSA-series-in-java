@@ -6,6 +6,7 @@
 ## Array
 |  |
 | ------- |
+| [0952-word-subsets](https://github.com/warisamir/DSA-series-in-java/tree/master/0952-word-subsets) |
 | [1025-minimum-cost-for-tickets](https://github.com/warisamir/DSA-series-in-java/tree/master/1025-minimum-cost-for-tickets) |
 | [1272-invalid-transactions](https://github.com/warisamir/DSA-series-in-java/tree/master/1272-invalid-transactions) |
 | [1428-jump-game-iii](https://github.com/warisamir/DSA-series-in-java/tree/master/1428-jump-game-iii) |
@@ -15,11 +16,13 @@
 ## Hash Table
 |  |
 | ------- |
+| [0952-word-subsets](https://github.com/warisamir/DSA-series-in-java/tree/master/0952-word-subsets) |
 | [1272-invalid-transactions](https://github.com/warisamir/DSA-series-in-java/tree/master/1272-invalid-transactions) |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
 ## String
 |  |
 | ------- |
+| [0952-word-subsets](https://github.com/warisamir/DSA-series-in-java/tree/master/0952-word-subsets) |
 | [1272-invalid-transactions](https://github.com/warisamir/DSA-series-in-java/tree/master/1272-invalid-transactions) |
 | [1537-maximum-score-after-splitting-a-string](https://github.com/warisamir/DSA-series-in-java/tree/master/1537-maximum-score-after-splitting-a-string) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/warisamir/DSA-series-in-java/tree/master/2691-count-vowel-strings-in-ranges) |
