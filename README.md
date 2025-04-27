@@ -12,6 +12,7 @@
 | [1428-jump-game-iii](https://github.com/warisamir/DSA-series-in-java/tree/master/1428-jump-game-iii) |
 | [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
+| [1706-min-cost-to-connect-all-points](https://github.com/warisamir/DSA-series-in-java/tree/master/1706-min-cost-to-connect-all-points) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/warisamir/DSA-series-in-java/tree/master/2691-count-vowel-strings-in-ranges) |
 | [2855-maximum-number-of-jumps-to-reach-the-last-index](https://github.com/warisamir/DSA-series-in-java/tree/master/2855-maximum-number-of-jumps-to-reach-the-last-index) |
 ## Hash Table
@@ -84,8 +85,17 @@
 | ------- |
 | [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/warisamir/DSA-series-in-java/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
+| [1706-min-cost-to-connect-all-points](https://github.com/warisamir/DSA-series-in-java/tree/master/1706-min-cost-to-connect-all-points) |
 ## Shortest Path
 |  |
 | ------- |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/warisamir/DSA-series-in-java/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
+## Union Find
+|  |
+| ------- |
+| [1706-min-cost-to-connect-all-points](https://github.com/warisamir/DSA-series-in-java/tree/master/1706-min-cost-to-connect-all-points) |
+## Minimum Spanning Tree
+|  |
+| ------- |
+| [1706-min-cost-to-connect-all-points](https://github.com/warisamir/DSA-series-in-java/tree/master/1706-min-cost-to-connect-all-points) |
 <!---LeetCode Topics End-->
