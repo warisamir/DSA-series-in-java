@@ -10,6 +10,7 @@
 | [1025-minimum-cost-for-tickets](https://github.com/warisamir/DSA-series-in-java/tree/master/1025-minimum-cost-for-tickets) |
 | [1272-invalid-transactions](https://github.com/warisamir/DSA-series-in-java/tree/master/1272-invalid-transactions) |
 | [1428-jump-game-iii](https://github.com/warisamir/DSA-series-in-java/tree/master/1428-jump-game-iii) |
+| [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/warisamir/DSA-series-in-java/tree/master/2691-count-vowel-strings-in-ranges) |
 | [2855-maximum-number-of-jumps-to-reach-the-last-index](https://github.com/warisamir/DSA-series-in-java/tree/master/2855-maximum-number-of-jumps-to-reach-the-last-index) |
@@ -18,6 +19,7 @@
 | ------- |
 | [0952-word-subsets](https://github.com/warisamir/DSA-series-in-java/tree/master/0952-word-subsets) |
 | [1272-invalid-transactions](https://github.com/warisamir/DSA-series-in-java/tree/master/1272-invalid-transactions) |
+| [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
 ## String
 |  |
@@ -30,6 +32,7 @@
 |  |
 | ------- |
 | [1272-invalid-transactions](https://github.com/warisamir/DSA-series-in-java/tree/master/1272-invalid-transactions) |
+| [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
 ## Binary Search
 |  |
 | ------- |
@@ -46,6 +49,7 @@
 |  |
 | ------- |
 | [1428-jump-game-iii](https://github.com/warisamir/DSA-series-in-java/tree/master/1428-jump-game-iii) |
+| [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
 | [2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level](https://github.com/warisamir/DSA-series-in-java/tree/master/2558-minimum-number-of-operations-to-sort-a-binary-tree-by-level) |
 ## Binary Tree
 |  |
@@ -74,4 +78,8 @@
 |  |
 | ------- |
 | [0019-remove-nth-node-from-end-of-list](https://github.com/warisamir/DSA-series-in-java/tree/master/0019-remove-nth-node-from-end-of-list) |
+## Graph
+|  |
+| ------- |
+| [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
 <!---LeetCode Topics End-->
