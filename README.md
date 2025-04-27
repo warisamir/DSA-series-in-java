@@ -59,6 +59,7 @@
 |  |
 | ------- |
 | [1025-minimum-cost-for-tickets](https://github.com/warisamir/DSA-series-in-java/tree/master/1025-minimum-cost-for-tickets) |
+| [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/warisamir/DSA-series-in-java/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [2562-count-ways-to-build-good-strings](https://github.com/warisamir/DSA-series-in-java/tree/master/2562-count-ways-to-build-good-strings) |
 | [2855-maximum-number-of-jumps-to-reach-the-last-index](https://github.com/warisamir/DSA-series-in-java/tree/master/2855-maximum-number-of-jumps-to-reach-the-last-index) |
 ## Prefix Sum
@@ -82,4 +83,9 @@
 |  |
 | ------- |
 | [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
+| [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/warisamir/DSA-series-in-java/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
+## Shortest Path
+|  |
+| ------- |
+| [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/warisamir/DSA-series-in-java/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 <!---LeetCode Topics End-->
