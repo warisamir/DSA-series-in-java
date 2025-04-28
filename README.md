@@ -13,6 +13,7 @@
 | [1436-get-watched-videos-by-your-friends](https://github.com/warisamir/DSA-series-in-java/tree/master/1436-get-watched-videos-by-your-friends) |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
 | [1706-min-cost-to-connect-all-points](https://github.com/warisamir/DSA-series-in-java/tree/master/1706-min-cost-to-connect-all-points) |
+| [2394-count-subarrays-with-score-less-than-k](https://github.com/warisamir/DSA-series-in-java/tree/master/2394-count-subarrays-with-score-less-than-k) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/warisamir/DSA-series-in-java/tree/master/2691-count-vowel-strings-in-ranges) |
 | [2855-maximum-number-of-jumps-to-reach-the-last-index](https://github.com/warisamir/DSA-series-in-java/tree/master/2855-maximum-number-of-jumps-to-reach-the-last-index) |
 ## Hash Table
@@ -38,6 +39,7 @@
 |  |
 | ------- |
 | [1684-find-latest-group-of-size-m](https://github.com/warisamir/DSA-series-in-java/tree/master/1684-find-latest-group-of-size-m) |
+| [2394-count-subarrays-with-score-less-than-k](https://github.com/warisamir/DSA-series-in-java/tree/master/2394-count-subarrays-with-score-less-than-k) |
 ## Simulation
 |  |
 | ------- |
@@ -67,6 +69,7 @@
 |  |
 | ------- |
 | [1537-maximum-score-after-splitting-a-string](https://github.com/warisamir/DSA-series-in-java/tree/master/1537-maximum-score-after-splitting-a-string) |
+| [2394-count-subarrays-with-score-less-than-k](https://github.com/warisamir/DSA-series-in-java/tree/master/2394-count-subarrays-with-score-less-than-k) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/warisamir/DSA-series-in-java/tree/master/2691-count-vowel-strings-in-ranges) |
 ## Depth-First Search
 |  |
@@ -98,4 +101,8 @@
 |  |
 | ------- |
 | [1706-min-cost-to-connect-all-points](https://github.com/warisamir/DSA-series-in-java/tree/master/1706-min-cost-to-connect-all-points) |
+## Sliding Window
+|  |
+| ------- |
+| [2394-count-subarrays-with-score-less-than-k](https://github.com/warisamir/DSA-series-in-java/tree/master/2394-count-subarrays-with-score-less-than-k) |
 <!---LeetCode Topics End-->
